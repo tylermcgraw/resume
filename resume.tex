@@ -1,0 +1,143 @@
+%-------------------------
+% Resume in Latex
+% Author : Tyler McGraw
+% Based off of: https://github.com/jakegut/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\input{glyphtounicode}
+
+\pagestyle{empty}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Tyler McGraw} \\ \vspace{5pt}
+    \href{mailto:tyler.a.mcgraw@gmail.com}{\underline{tyler.a.mcgraw@gmail.com}} $|$ \href{https://linkedin.com/in/tylermcgraw}{\underline{linkedin.com/in/tylermcgraw}} $|$ \href{https://github.com/tylermcgraw}{\underline{github.com/tylermcgraw}} $|$ \small San Francisco Bay Area, CA \\ \vspace{1pt}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+        {\textbf{Co-Creator and Software Engineer} $|$ \emph{\href{https://chunkwise.github.io/}{\underline{Chunkwise}}}}{Oct 2025 -- Present}
+        \item\small{\emph{An open-source, self-managed platform that evaluates chunking strategies and deploys ETL pipelines for RAG systems. Read the case study at \href{https://chunkwise.github.io/case_study/overview/}{\underline{chunkwise.github.io/case\_study/overview/}}}}
+            \resumeItemListStart
+                \resumeItem{Built a microservice-based backend using FastAPI, separating concerns across chunking, evaluation, and orchestration services, with standardized APIs and shared Pydantic models for type-safe inter-service communication.}
+                \resumeItem{Created a uniform abstraction layer over multiple third-party chunking libraries (LangChain and Chonkie), normalizing metadata to enable consistent visualization, evaluation, and cross-provider comparison.}
+                \resumeItem{Architected a scalable ETL ingestion pipeline using AWS Batch on Fargate to parallelize document chunking and embedding generation, balancing throughput with external API rate limits.}
+                \resumeItem{Developed a real-time job tracking system using Server-Sent Events (SSE) to stream progress from AWS Batch document processing jobs to the client UI.}
+                \resumeItem{Deployed a data persistence layer using Amazon S3 for document storage and Amazon RDS PostgreSQL (with pgvector) for embedding storage, separating experimentation and production workloads for isolation and scalability.}
+                \resumeItem{Implemented a retrieval-based evaluation service that computes Precision, Recall, and Intersection over Union (IoU) metrics to quantify the semantic coherence of chunking strategies against LLM-generated ground truth.}
+                \resumeItem{Built a document normalization system to sanitize multi-byte Unicode artifacts, eliminating tokenization failures in downstream embedding models and ensuring consistent evaluation accuracy.}
+            \resumeItemListEnd
+        \resumeSubheading
+            {\textbf{Software Engineer} $|$ \emph{Open Source Projects}}{June 2025 -- Oct 2025}
+            \resumeItemListStart
+                \resumeItem{\textbf{Request Bin}: A developer tool for receiving, persisting, and inspecting HTTP requests and webhooks via a generated URL endpoint \emph{(JavaScript, Express, MongoDB, PostgreSQL, WebSockets, AWS, Nginx)}}
+                \resumeItem{\textbf{Job Hunt Assistant}: A RAG application with chat history and token management \emph{(Python, PostgreSQL, RAG)}}
+                \resumeItem{\textbf{Shopping Cart}: An e-commerce shopping cart app \emph{(TypeScript, React, Express, MongoDB)}}
+            \resumeItemListEnd
+        \resumeSubheading
+            {\textbf{High School Mathematics Teacher}}{July 2023 -- June 2025}
+            \resumeItemListStart
+                \resumeItem{Taught AP Computer Science Principles, AP Calculus, AP Statistics, AP Precalculus, and Precalculus Honors}
+                \resumeItem{Founded three new AP courses, a math competition team, and a D\&D club}
+                \resumeItem{Led AI initiatives for students and teachers including guest speakers and workshops}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\section{Skills}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+        {\textbf{Languages}: TypeScript, Python, SQL, HTML, CSS}{}
+        \resumeSubheading
+        {\textbf{Frameworks}: Node.js, React, Express, FastAPI, Flask}{}
+        \resumeSubheading
+        {\textbf{Cloud}: AWS (ECS, EC2, Lambda, Batch, RDS, S3, Secrets Manager, CDK, CLI), DigitalOcean, Heroku}{}
+        \resumeSubheading
+        {\textbf{Other}: PostgreSQL, SQLite, MongoDB, Jest, Vitest, Pytest, Git, Docker, Linux, Nginx}{}
+    \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {\textbf{Launch School}}{Sep 2024 -- Oct 2025}
+            \resumeItemListStart
+                \resumeItem{Multi-year, mastery-based software engineering curriculum. Learn more at \href{https://launchschool.com/employers}{\underline{launchschool.com/employers}}}
+            \resumeItemListEnd
+        \resumeSubheading
+            {\textbf{Washington University in St. Louis}}{Aug 2016 -- May 2020}
+            \resumeItemListStart
+                \resumeItem{Bachelor of Arts in Philosophy-Neuroscience-Psychology, Minor in Computer Science}
+                \resumeItem{Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming, Discrete Math}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
