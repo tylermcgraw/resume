@@ -83,13 +83,13 @@
         {\textbf{Co-Creator and Software Engineer} $|$ \emph{\href{https://chunkwise.github.io/}{\underline{Chunkwise}}}}{Oct 2025 -- Present}
         \item\small{\emph{An open-source, self-managed platform that evaluates chunking strategies and deploys ETL pipelines for RAG systems. Read the case study at \href{https://chunkwise.github.io/case_study/overview/}{\underline{chunkwise.github.io/case\_study/overview/}}}}
             \resumeItemListStart
-                \resumeItem{Built a microservice-based backend using FastAPI, separating concerns across chunking, evaluation, and orchestration services, with standardized APIs and shared Pydantic models for type-safe inter-service communication.}
-                \resumeItem{Created a uniform abstraction layer over multiple third-party chunking libraries (LangChain and Chonkie), normalizing metadata to enable consistent visualization, evaluation, and cross-provider comparison.}
-                \resumeItem{Architected a scalable ETL ingestion pipeline using AWS Batch on Fargate to parallelize document chunking and embedding generation, balancing throughput with external API rate limits.}
-                \resumeItem{Developed a real-time job tracking system using Server-Sent Events (SSE) to stream progress from AWS Batch document processing jobs to the client UI.}
-                \resumeItem{Deployed a data persistence layer using Amazon S3 for document storage and Amazon RDS PostgreSQL (with pgvector) for embedding storage, separating experimentation and production workloads for isolation and scalability.}
-                \resumeItem{Implemented a retrieval-based evaluation service that computes Precision, Recall, and Intersection over Union (IoU) metrics to quantify the semantic coherence of chunking strategies against LLM-generated ground truth.}
-                \resumeItem{Built a document normalization system to sanitize multi-byte Unicode artifacts, eliminating tokenization failures in downstream embedding models and ensuring consistent evaluation accuracy.}
+                \resumeItem{Designed a modular FastAPI backend using shared Pydantic models to ensure type-safety across services.}
+                \resumeItem{Created a uniform abstraction layer over multiple third-party chunking libraries (LangChain and Chonkie), enabling consistent visualization and evaluation.}
+                \resumeItem{Scaled the ETL pipeline by using AWS Batch (Fargate) to parallelize document processing while managing external API rate limits to prevent throttling.}
+                \resumeItem{Developed a real-time job tracking system using server-sent events (SSE) to stream progress from AWS Batch document processing jobs to the client UI.}
+                \resumeItem{Managed data persistence with Amazon S3 for document and LLM query storage and Amazon RDS PostgreSQL (with pgvector) for embeddings and workflows.}
+                \resumeItem{Built an evaluation service that calculates Precision, Recall, and IoU metrics, giving users a quantitative way to measure how chunking strategies impact retrieval accuracy.}
+                \resumeItem{Resolved tokenization failures by building a custom normalization step to strip multi-byte Unicode artifacts from raw text before reaching the embedding model.}
             \resumeItemListEnd
         \resumeSubheading
             {\textbf{Software Engineer} $|$ \emph{Open Source Projects}}{June 2025 -- Oct 2025}
