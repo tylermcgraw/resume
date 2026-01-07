@@ -41,6 +41,12 @@
 
 %-------------------------
 % Custom commands
+\newcommand{\resumeSummary}[1]{
+  \small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -75,31 +81,33 @@
     \href{mailto:tyler.a.mcgraw@gmail.com}{\underline{tyler.a.mcgraw@gmail.com}} $|$ \href{https://linkedin.com/in/tylermcgraw}{\underline{linkedin.com/in/tylermcgraw}} $|$ \href{https://github.com/tylermcgraw}{\underline{github.com/tylermcgraw}} $|$ \small San Francisco Bay Area, CA \\ \vspace{1pt}
 \end{center}
 
+I am a full-stack software engineer with several years of experience in the JavaScript and Python ecosystems. I recently co-created \emph{\href{https://chunkwise.github.io/}{\underline{Chunkwise}}}, an open-source, self-managed platform that evaluates chunking strategies and deploys ETL pipelines for RAG systems.
 
 %-----------EXPERIENCE-----------
 \section{Experience}
     \resumeSubHeadingListStart
         \resumeSubheading
-        {\textbf{Co-Creator and Software Engineer} $|$ \emph{\href{https://chunkwise.github.io/}{\underline{Chunkwise}}}}{Oct 2025 -- Present}
-        \item\small{\emph{An open-source, self-managed platform that evaluates chunking strategies and deploys ETL pipelines for RAG systems. Read the case study at \href{https://chunkwise.github.io/case_study/overview/}{\underline{chunkwise.github.io/case\_study/overview/}}}}
+        {\textbf{Co-Creator and Software Engineer} $|$ \emph{Chunkwise}}{2025 -- Present}
             \resumeItemListStart
-                \resumeItem{Designed a modular FastAPI backend using shared Pydantic models to ensure type-safety across services.}
-                \resumeItem{Created a uniform abstraction layer over multiple third-party chunking libraries (LangChain and Chonkie), enabling consistent visualization and evaluation.}
-                \resumeItem{Scaled the ETL pipeline by using AWS Batch (Fargate) to parallelize document processing while managing external API rate limits to prevent throttling.}
-                \resumeItem{Developed a real-time job tracking system using server-sent events (SSE) to stream progress from AWS Batch document processing jobs to the client UI.}
-                \resumeItem{Managed data persistence with Amazon S3 for document and LLM query storage and Amazon RDS PostgreSQL (with pgvector) for embeddings and workflows.}
-                \resumeItem{Built an evaluation service that calculates Precision, Recall, and IoU metrics, giving users a quantitative way to measure how chunking strategies impact retrieval accuracy.}
-                \resumeItem{Resolved tokenization failures by building a custom normalization step to strip multi-byte Unicode artifacts from raw text before reaching the embedding model.}
+                \resumeItem{Scaled the ETL pipeline to parallelize document processing while managing external API rate limits to prevent throttling. \emph{(AWS Batch (Fargate), OpenAI API)}}
+                \resumeItem{Developed a real-time job tracking system to stream progress from AWS Batch document processing jobs to the client UI. \emph{(Server-sent events (SSE))}}
+                \resumeItem{Built a web interface for experimentation via real-time visualization, side-by-side metrics comparison, and one-click deployment of validated strategies to production. \emph{(TypeScript, React)}}
+                \resumeItem{Developed a modular backend using shared Pydantic models across chunking, evaluation, and orchestration services. \emph{(Python, FastAPI, Docker, ECR)}}
+                \resumeItem{Created a uniform abstraction layer over multiple third-party chunking libraries, enabling consistent visualization and evaluation. \emph{(LangChain, Chonkie)}}
+                \resumeItem{Built an evaluation service that calculates Precision, Recall, and IoU metrics, giving users a quantitative way to measure how chunking strategies impact retrieval accuracy. \emph{(ChromaDB, OpenAI API)}}
+                \resumeItem{Designed a RESTful API to persist workflow data, orchestrate services, and coordinate AWS Batch jobs. \emph{(FastAPI)}}
+                \resumeItem{Managed data persistence for LLM queries, embeddings, and workflows. \emph{(Amazon RDS PostgreSQL, pgvector, Amazon S3)}}
+                \resumeItem{Authored a technical \href{https://chunkwise.github.io/case_study/overview/}{\underline{case study}} and built a professional website. \emph{(TypeScript, Astro)}}
             \resumeItemListEnd
         \resumeSubheading
-            {\textbf{Software Engineer} $|$ \emph{Open Source Projects}}{June 2025 -- Oct 2025}
+            {\textbf{Software Engineer} $|$ \emph{Open Source Projects}}{2024 -- 2025}
             \resumeItemListStart
-                \resumeItem{\textbf{Request Bin}: A developer tool for receiving, persisting, and inspecting HTTP requests and webhooks via a generated URL endpoint \emph{(JavaScript, Express, MongoDB, PostgreSQL, WebSockets, AWS, Nginx)}}
-                \resumeItem{\textbf{Job Hunt Assistant}: A RAG application with chat history and token management \emph{(Python, PostgreSQL, RAG)}}
-                \resumeItem{\textbf{Shopping Cart}: An e-commerce shopping cart app \emph{(TypeScript, React, Express, MongoDB)}}
+                \resumeItem{Request Bin: A developer tool for receiving, persisting, and inspecting HTTP requests and webhooks via a generated URL endpoint \emph{(JavaScript, Express, MongoDB, PostgreSQL, WebSockets, AWS, Nginx)}}
+                \resumeItem{Job Hunt Assistant: A RAG application with chat history and token management \emph{(Python, PostgreSQL, RAG)}}
+                \resumeItem{Shopping Cart: An e-commerce shopping cart app \emph{(TypeScript, React, Express, MongoDB)}}
             \resumeItemListEnd
         \resumeSubheading
-            {\textbf{High School Mathematics Teacher}}{July 2023 -- June 2025}
+            {\textbf{High School Mathematics Teacher}}{2023 -- 2025}
             \resumeItemListStart
                 \resumeItem{Taught AP Computer Science Principles, AP Calculus, AP Statistics, AP Precalculus, and Precalculus Honors}
                 \resumeItem{Founded three new AP courses, a math competition team, and a D\&D club}
@@ -116,9 +124,11 @@
         \resumeSubheading
         {\textbf{Frameworks}: Node.js, React, Express, FastAPI, Flask}{}
         \resumeSubheading
+        {\textbf{AI}: OpenAI API, LangChain and Chonkie libraries, Context Engineering, RAG, Vector Databases, Embeddings}{}
+        \resumeSubheading
         {\textbf{Cloud}: AWS (ECS, EC2, Lambda, Batch, RDS, S3, Secrets Manager, CDK, CLI), DigitalOcean, Heroku}{}
         \resumeSubheading
-        {\textbf{Other}: PostgreSQL, SQLite, MongoDB, Jest, Vitest, Pytest, Git, Docker, Linux, Nginx}{}
+        {\textbf{Other}: PostgreSQL, SQLite, MongoDB, Jest, Vitest, Pytest, Git, Docker, RESTful APIs, Linux, Nginx}{}
     \resumeSubHeadingListEnd
 
 
@@ -126,12 +136,7 @@
 \section{Education}
     \resumeSubHeadingListStart
         \resumeSubheading
-            {\textbf{Launch School}}{Sep 2024 -- Oct 2025}
-            \resumeItemListStart
-                \resumeItem{Multi-year, mastery-based software engineering curriculum. Learn more at \href{https://launchschool.com/employers}{\underline{launchschool.com/employers}}}
-            \resumeItemListEnd
-        \resumeSubheading
-            {\textbf{Washington University in St. Louis}}{Aug 2016 -- May 2020}
+            {\textbf{Washington University in St. Louis}}{2016 -- 2020}
             \resumeItemListStart
                 \resumeItem{Bachelor of Arts in Philosophy-Neuroscience-Psychology, Minor in Computer Science}
                 \resumeItem{Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming, Discrete Math}
